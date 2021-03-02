@@ -6,14 +6,16 @@ class Phrase:
         pass
 
     def display(self, guesses):
-        for letter in self.guesses:
-            print("_ ")
-        for letter in self.guesses:
-            print(f'{letter}', end=' ')
+        for letter in self.phrase:
+            if self.phrase.islower() == True:
+                if letter in guesses:
+                    print(f'{letter}', end=' ')
+            else:
+                print ("_ ", end=" ")
         # this prints out the phrase to the console with guessed letters visibile and unguessed letters as underscores. For
         # example, if the current phrase is "hello world" and the user has guessed the letter "o", the output should look like this:
         # _ _ _ _ o    _ o _ _
-        pass
+        # pass
 
     def check_letter(self):
         # checks to see if the letter selected by the user matches a letter in the phrase.
