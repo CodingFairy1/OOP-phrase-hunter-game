@@ -1,5 +1,6 @@
 # Create your Game class logic in here.
-# from phrase import Phrase
+from phrasehunter.phrase import Phrase
+import random
 
 class Game:
     def __init__(self):
@@ -9,7 +10,7 @@ class Game:
         self.phrases = [Phrase('dance machine'), Phrase('home theatre'), Phrase('arcade games'), Phrase('pixel perfect'), Phrase('karaoke bar')]
         # ^ a list of five Phrase objects to use with the game. A phrase should only include letters and spaces -- no numbers,
         # puntuation or other special characters.
-        self.active_phrase = None
+        self.active_phrase = self.get_random_phrase()
         # ^ This is the Phrase object that's currently in play. The initial value will be None. Within the start_game() method, this
         # property will be set to the Phrase object returned from a call to the get_random_phrase() method.
         self.guesses = [" "]
@@ -22,8 +23,9 @@ class Game:
         pass
 
     def get_random_phrase(self):
+        your_phrase = random.choice(self.phrases)
+        return your_phrase
         # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
-        pass
 
     def welcome(self):
         # print("Hi! Welcome to the phrase hunter game!")
@@ -43,5 +45,3 @@ class Game:
     def game_over(self):
         # this method displays a friendly win or loss message and ends the game.
         pass
-
-    print(phrase)

@@ -2,14 +2,10 @@
 from phrasehunter.game import Game
 from phrasehunter.phrase import Phrase
 # Create your Dunder Main statement.
-def __main__():
-    phrase = Phrase()
-    game = Game()
-    # for phrase in game.phrases:
-    #     print(phrase.phrase)
+
 # Inside Dunder Main:
-## Create an instance of your Game class
-## Start your game by calling the instance method that starts the game loop
+#  Create an instance of your Game class
+# Start your game by calling the instance method that starts the game loop
 
 
 #
@@ -19,5 +15,9 @@ def __main__():
 
 # Tests to make sure it's working
 
-phrase = Phrase("dance")
-print(phrase.phrase)
+if __name__ == '__main__':
+    game = Game()
+    print(game.active_phrase)
+    game.active_phrase.display(game.guesses)
+    # def print_phrase(your_phrase):
+    #     print(f'The phrase is: {your_phrase.phrase}')
