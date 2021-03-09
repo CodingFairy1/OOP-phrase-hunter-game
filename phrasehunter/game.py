@@ -17,7 +17,12 @@ class Game:
         # ^ This is a list that contains the letters guessed by the user
 
     def start(self):
-        # self.welcome()
+        self.welcome()
+        print(f"Number missed: {self.missed}")
+        Phrase.display(self.active_phrase, self.guesses)
+        user_guess = self.get_guess
+        self.guesses.append(user_guess)
+        print(user_guess)
         # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
         # the number of missed by one if the guess is incorrect, calls the game_over method.
         pass
@@ -28,13 +33,17 @@ class Game:
         # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
 
     def welcome(self):
-        # print("Hi! Welcome to the phrase hunter game!")
+        print("""
+                  0===========0============0
+          (>^_^)>| Welcome to Phrase Hunter |<(^o^<)
+         0____________________0_____________________0
+        """)
         # this method prints a friendly welcome message to the user at the start of the game
         pass
 
     def get_guess(self):
         # this method gets the guess from a user and records it in the guesses attribute
-        # get_guess = input("Try and guess a letter:  ")
+        input("Try and guess a letter:  ")
         # guesses.append(get_guess.lower())
         # if get_guess == ???:
         #

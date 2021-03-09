@@ -17,7 +17,9 @@ from phrasehunter.phrase import Phrase
 
 if __name__ == '__main__':
     game = Game()
-    print(game.active_phrase)
-    game.active_phrase.display(game.guesses)
+    # game.welcome()
+    # print(game.active_phrase.phrase)
+    game.start()
+    # game.active_phrase.display(game.guesses)
     # def print_phrase(your_phrase):
     #     print(f'The phrase is: {your_phrase.phrase}')
