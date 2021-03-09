@@ -20,7 +20,7 @@ class Game:
         self.welcome()
         print(f"Number missed: {self.missed}")
         Phrase.display(self.active_phrase, self.guesses)
-        user_guess = self.get_guess
+        user_guess = self.get_guess()
         self.guesses.append(user_guess)
         print(user_guess)
         # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
@@ -43,7 +43,8 @@ class Game:
 
     def get_guess(self):
         # this method gets the guess from a user and records it in the guesses attribute
-        input("Try and guess a letter:  ")
+        user_input = input("\n\nTry and guess a letter:  ")
+        return user_input
         # guesses.append(get_guess.lower())
         # if get_guess == ???:
         #
