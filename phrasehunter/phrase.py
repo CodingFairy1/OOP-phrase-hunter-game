@@ -20,6 +20,12 @@ class Phrase:
         # _ _ _ _ o    _ o _ _
         # pass
 
+    def check_guess(self, guess):
+        if Game.user_guess == True:
+            return True
+        elif Game.user_guess == False:
+            return False
+
     def check_letter(self):
         # checks to see if the letter selected by the user matches a letter in the phrase.
         pass
