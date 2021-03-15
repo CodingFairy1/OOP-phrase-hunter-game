@@ -22,8 +22,9 @@ class Game:
         self.active_phrase.display(self.guesses)
         user_guess = self.get_guess()
         self.guesses.append(user_guess)
-        Phrase.check_guess(active_phrase)
-        # self.active_phrase.display(self.guesses)
+        # Phrase.check_guess(active_phrase(user_guess))
+        self.active_phrase.check_guess(user_guess)
+        self.active_phrase.display(user_guess)
         # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
         # the number of missed by one if the guess is incorrect, calls the game_over method.
         pass

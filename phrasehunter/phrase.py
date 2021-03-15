@@ -1,4 +1,5 @@
 # Create your Phrase class logic here.
+# from phrasehunter.game import Game
 
 class Phrase:
     def __init__(self, phrase):
@@ -21,9 +22,9 @@ class Phrase:
         # pass
 
     def check_guess(self, guess):
-        if Game.user_guess == True:
+        if guess in self.phrase:
             return True
-        elif Game.user_guess == False:
+        else:
             return False
 
     def check_letter(self):
