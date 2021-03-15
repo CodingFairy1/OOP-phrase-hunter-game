@@ -22,6 +22,10 @@ class Game:
         self.active_phrase.display(self.guesses)
         user_guess = self.get_guess()
         self.guesses.append(user_guess)
+        if self.active_phrase.check_guess(user_guess):
+            print("YAY")
+        else:
+            print("Bummer!")
         # Phrase.check_guess(active_phrase(user_guess))
         self.active_phrase.check_guess(user_guess)
         self.active_phrase.display(user_guess)

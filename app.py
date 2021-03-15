@@ -20,10 +20,10 @@ if __name__ == '__main__':
     # game.welcome()
     # print(game.active_phrase.phrase)
     game.start()
-    if active_phrase.check_guess(user_guess):
-        print("YAY")
-    else:
-        print("Bummer!")
+    # if active_phrase.check_guess(user_guess):
+    #     print("YAY")
+    # else:
+    #     print("Bummer!")
     # game.active_phrase.display(game.guesses)
     # def print_phrase(your_phrase):
     #     print(f'The phrase is: {your_phrase.phrase}')
