@@ -18,17 +18,18 @@ class Game:
 
     def start(self):
         self.welcome()
-        print(f"Number missed: {self.missed}")
-        self.active_phrase.display(self.guesses)
-        user_guess = self.get_guess()
-        self.guesses.append(user_guess)
-        if self.active_phrase.check_guess(user_guess):
-            print("YAY")
-        else:
-            print("Bummer!")
-        # Phrase.check_guess(active_phrase(user_guess))
-        self.active_phrase.check_guess(user_guess)
-        self.active_phrase.display(user_guess)
+        while self.missed < 5:
+            print(f"Number missed: {self.missed}")
+            self.active_phrase.display(self.guesses)
+            user_guess = self.get_guess()
+            self.guesses.append(user_guess)
+            # Phrase.check_guess(active_phrase(user_guess))
+            self.active_phrase.check_guess(user_guess)
+            self.active_phrase.display(user_guess)
+            if self.active_phrase.check_guess(user_guess):
+                print("\nYAY")
+            elif not self.active_phrase.check_guess(user_guess):
+                self.missed += 1
         # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
         # the number of missed by one if the guess is incorrect, calls the game_over method.
         pass
