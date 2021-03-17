@@ -17,46 +17,38 @@ class Game:
         # ^ This is a list that contains the letters guessed by the user
 
     def start(self):
+        # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
         self.welcome()
-        while self.missed < 5:
+        while self.missed < 5 or self.active_phrase.check_complete(self.guesses) == False:
             print(f"Number missed: {self.missed}")
             self.active_phrase.display(self.guesses)
             user_guess = self.get_guess()
             self.guesses.append(user_guess)
-            # Phrase.check_guess(active_phrase(user_guess))
             self.active_phrase.check_guess(user_guess)
-            self.active_phrase.display(user_guess)
-            if self.active_phrase.check_guess(user_guess):
-                print("\nYAY")
             elif not self.active_phrase.check_guess(user_guess):
                 self.missed += 1
-        # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
-        # the number of missed by one if the guess is incorrect, calls the game_over method.
+            self.active_phrase.check_complete(self.guesses)
+            # Assigning the guesses?^
         pass
 
     def get_random_phrase(self):
+        # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
         your_phrase = random.choice(self.phrases)
         return your_phrase
-        # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
 
     def welcome(self):
+        # this method prints a friendly welcome message to the user at the start of the game
         print("""
                   0===========0============0
           (>^_^)>| Welcome to Phrase Hunter |<(^o^<)
          0____________________0_____________________0
         """)
-        # this method prints a friendly welcome message to the user at the start of the game
         pass
 
     def get_guess(self):
         # this method gets the guess from a user and records it in the guesses attribute
         user_input = input("\n\nTry and guess a letter:  ")
         return user_input
-        # guesses.append(get_guess.lower())
-        # if get_guess == ???:
-        #
-        # elif get_guess != ???:
-        #     missed + 1
         pass
 
     def game_over(self):
