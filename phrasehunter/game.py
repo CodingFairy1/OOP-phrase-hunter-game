@@ -5,14 +5,8 @@ import random
 class Game:
     def __init__(self):
         self.missed = 0
-        # ^ used to track the number of incorrect guesses by the user. The initial value is 0 since no guesses have been made at the
-        # start of the game.
         self.phrases = [Phrase('dance machine'), Phrase('home theatre'), Phrase('arcade games'), Phrase('pixel perfect'), Phrase('karaoke bar')]
-        # ^ a list of five Phrase objects to use with the game. A phrase should only include letters and spaces -- no numbers,
-        # puntuation or other special characters.
         self.active_phrase = self.get_random_phrase()
-        # ^ This is the Phrase object that's currently in play. The initial value will be None. Within the start_game() method, this
-        # property will be set to the Phrase object returned from a call to the get_random_phrase() method.
         self.guesses = [" "]
         # ^ This is a list that contains the letters guessed by the user
 
@@ -28,7 +22,7 @@ class Game:
             if not self.active_phrase.check_guess(user_guess):
                 self.missed += 1
             self.active_phrase.check_complete(self.guesses)
-            # Assigning the guesses?^
+        self.game_over()
 
     def get_random_phrase(self):
         # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
@@ -50,4 +44,7 @@ class Game:
 
     def game_over(self):
         # this method displays a friendly win or loss message and ends the game.
-        pass
+        if self.missed == 5:
+            print("Sorry, you're out of guesses. Better luck next time!")
+        else:
+            print("Congratulations! You win!")

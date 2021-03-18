@@ -7,9 +7,7 @@ class Phrase:
         return f'{self.phrase}'
 
     def display(self, guesses):
-        # this prints out the phrase to the console with guessed letters visibile and unguessed letters as underscores. For
-        # example, if the current phrase is "hello world" and the user has guessed the letter "o", the output should look like this:
-        # _ _ _ _ o    _ o _ _
+        # this prints out the phrase to the console with guessed letters visibile and unguessed letters as underscores.
         for letter in self.phrase:
             if self.phrase.islower() == True:
                 if letter in guesses:
@@ -32,4 +30,4 @@ class Phrase:
         for letter in self.phrase:
             if letter not in guesses:
                 return False
-            return True
+        return True
