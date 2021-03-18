@@ -25,11 +25,10 @@ class Game:
             user_guess = self.get_guess()
             self.guesses.append(user_guess)
             self.active_phrase.check_guess(user_guess)
-            elif not self.active_phrase.check_guess(user_guess):
+            if not self.active_phrase.check_guess(user_guess):
                 self.missed += 1
             self.active_phrase.check_complete(self.guesses)
             # Assigning the guesses?^
-        pass
 
     def get_random_phrase(self):
         # this method randomly retrieves one of the phrases stored in the phrases list and returns it.
@@ -43,13 +42,11 @@ class Game:
           (>^_^)>| Welcome to Phrase Hunter |<(^o^<)
          0____________________0_____________________0
         """)
-        pass
 
     def get_guess(self):
         # this method gets the guess from a user and records it in the guesses attribute
         user_input = input("\n\nTry and guess a letter:  ")
         return user_input
-        pass
 
     def game_over(self):
         # this method displays a friendly win or loss message and ends the game.

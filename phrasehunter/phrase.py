@@ -2,7 +2,6 @@
 class Phrase:
     def __init__(self, phrase):
         self.phrase = phrase.lower()
-        pass
 
     def __repr__(self):
         return f'{self.phrase}'
@@ -33,14 +32,4 @@ class Phrase:
         for letter in self.phrase:
             if letter not in guesses:
                 return False
-        return True
-        """
-        loop through 'phrase' attribute. If any letter is not present in 'guesses', return 'False'. If it makes it through
-        the entire loop without returning 'False', return True
-
-        if all letters have been guessed:
-                return True
-            elif:
-                return False
-        """
-        pass
+            return True
