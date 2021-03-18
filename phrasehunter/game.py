@@ -19,7 +19,7 @@ class Game:
     def start(self):
         # Calls the welcome method, creates the game loop, calls the get_guess method, adds the user's guess to guesses, increments
         self.welcome()
-        while self.missed < 5 or self.active_phrase.check_complete(self.guesses) == False:
+        while self.missed < 5 and self.active_phrase.check_complete(self.guesses) == False:
             print(f"Number missed: {self.missed}")
             self.active_phrase.display(self.guesses)
             user_guess = self.get_guess()
